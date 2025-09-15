@@ -44,7 +44,7 @@ Result:
 ![THB to EUR](screenshots/THB_EUR.png)
 
 
-### Case 3 — 50 pesos → USD *(unsupported → list options)*  
+### Case 3 — 50 pesos → USD
 
 Result: 
 ![Pesos to USD](screenshots/PESOS_USD.png)

@@ -34,26 +34,31 @@ We tested 5 cases:
 
 ### Case 1 — 100 USD → THB  
 
+Result: 
 ![USD to THB](screenshots/USD_THB.png)
 
 
 ### Case 2 — 250 baht → EUR  
 
+Result: 
 ![THB to EUR](screenshots/THB_EUR.png)
 
 
 ### Case 3 — 50 pesos → USD *(unsupported → list options)*  
 
+Result: 
 ![Pesos to USD](screenshots/PESOS_USD.png)
 
 
 ### Case 4 — 10 EUR → USD  
 
+Result: 
 ![EUR to USD](screenshots/EUR_USD.png)
 
 
-### Case 5 — 500 USD → USD *(edge error)*  
+### Case 5 — 500 USD → USD  
 
+Result: 
 ![USD to USD](screenshots/USD_USD.png)
 
 

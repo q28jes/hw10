@@ -1,23 +1,63 @@
-# hw10 — Structured Outputs (JSON Mode) & Tool Calling (LiteLLM)
+# HW10 — JSON Mode & Tool Calling (LiteLLM)
 
-Two parts:
-1) **Schema-validated extractor (nested JSON)**
-2) **Currency mini-agent (simulated) using tool calling**
+Tho parts:
 
+**- Schema-validated extractor**
 
-## json_mode_schema.py
+**- Currency mini-agent (simulated)**
+
+---
+
+## 1) Schema-Validated Extractor  
+Nested JSON with a strict schema.  
+
+**Input:** order text → **Output:** structured JSON  
 messages = [
-  {"role":"user","content":"Order A-1029 by Sarah Johnson : WB-500; 2x Water Bottle ($12.50 each), CP-010; 1x Carrying Pouch ($5). Total $30. sj@example.com. "}
+  {"role": "system", "content": "Return ONLY a JSON object matching the schema."},
+  {"role": "user", "content": "Order A-1029 by Sarah Johnson : 2x Water Bottle ($12.50 each), 1x Carrying Pouch ($5). Total $30."}
 ]
-![Schema](screenshots/schema_result.png)
-## tc_complete_currency.py
-ex.run("Convert 100 USD to THB")
+
+response_format={"type": "json_schema", "json_schema": schema},
+)
+
+Result:  
+
+![Schema Result](screenshots/schema_result.png)
+
+---
+
+## 2) Currency Mini-Agent  
+Tool calling with mock exchange rates.  
+
+We tested 5 cases:
+
+
+### Case 1 — 100 USD → THB  
+
 ![USD to THB](screenshots/USD_THB.png)
-ex.run("Convert 250 baht to euros")
+
+
+### Case 2 — 250 baht → EUR  
+
 ![THB to EUR](screenshots/THB_EUR.png)
-ex.run("Convert 50 PESOS to USD")
-![PESOS to USD](screenshots/PESOS_USD.png)
-ex.run("Convert 10 euros to yens")
+
+
+### Case 3 — 50 pesos → USD *(unsupported → list options)*  
+
+![Pesos to USD](screenshots/PESOS_USD.png)
+
+
+### Case 4 — 10 EUR → USD  
+
 ![EUR to USD](screenshots/EUR_USD.png)
-ex.run("Convert 500 dollars to rupees")
+
+
+### Case 5 — 500 USD → USD *(edge error)*  
+
 ![USD to USD](screenshots/USD_USD.png)
+
+
+---
+
+## P.S.
+- Using 'temperature=0.2' for stable tool selection  

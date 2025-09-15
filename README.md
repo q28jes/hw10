@@ -9,7 +9,7 @@ Tho parts:
 ---
 
 ## 1) Schema-Validated Extractor  
-Nested JSON with a strict schema.  
+>Nested JSON with a strict schema.  
 
 **Input:** order text → **Output:** structured JSON  
 messages = [
@@ -27,7 +27,7 @@ Result:
 ---
 
 ## 2) Currency Mini-Agent  
-Tool calling with mock exchange rates.  
+>Tool calling with mock exchange rates.  
 
 We tested 5 cases:
 

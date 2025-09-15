@@ -1,4 +1,4 @@
-#hw10 — Structured Outputs (JSON Mode) & Tool Calling (LiteLLM)
+####hw10 — Structured Outputs (JSON Mode) & Tool Calling (LiteLLM)
 
 Two parts:
 1) **Schema-validated extractor (nested JSON)**

@@ -1,1 +1,17 @@
-
+#Test cases
+## json_mode_schema.py
+messages = [
+  {"role":"user","content":"Order A-1029 by Sarah Johnson : WB-500; 2x Water Bottle ($12.50 each), CP-010; 1x Carrying Pouch ($5). Total $30. sj@example.com. "}
+]
+![Schema](screenshots/0.png)
+## tc_complete_currency.py
+ex.run("Convert 100 USD to THB")
+![USD to THB](screenshots/1.png)
+ex.run(Convert 250 baht to euros)
+![baht to euros](screenshots/2.png)
+ex.run("Convert 50 pesos to USD")
+![EUR to USD](screenshots/3.png)
+ex.run("Convert 10 EUR to USD")
+![euros to yens](screenshots/4.png)
+ex.run("Convert 500 USD to USD")
+![dollars to rupees](screenshots/5.png)
